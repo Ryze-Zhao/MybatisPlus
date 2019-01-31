@@ -17,14 +17,13 @@ public class MybatisPlus1ApplicationTests {
     @Autowired
     private UserMapper userMapper;
     @Test
-    public void testByNull() {
-
+    public void selectAll() {
         userMapper.selectList(null).stream().forEach(e -> System.out.println(e.toString()));
         //System.out.println(userMapper.selectById(1).toString());
     }
 
     @Test
-    public void testByMap() {
+    public void selectByMap() {
         Map<String, Object> map = new HashMap<String, Object>();
         //精确查询的
         map.put("test_column", "test1");
@@ -32,8 +31,7 @@ public class MybatisPlus1ApplicationTests {
     }
 
     @Test
-    public void testByWrapper(){
-        User user=userMapper.selectById(1);
+    public void selectByWrapper(){
         userMapper.selectList(new QueryWrapper<User>().like("test_column","test")).stream().forEach(e -> System.out.println(e.toString()));
     }
 
