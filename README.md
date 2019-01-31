@@ -15,7 +15,9 @@
 #### 使用说明
 
 1.  mybatis-plus-1
-    简单使用BaseMapper的demo 
+    简单使用BaseMapper的demo，
+        1、展示了MybatisPlus的核心功能之一Select接口使用（其他CUD操作也类似的）；
+        2、展示了MybatisPlus的核心功能之一条件构造器AbstractWrapper（UpdateWrapper、QueryWrapper）等；
         
     
     
