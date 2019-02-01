@@ -20,16 +20,17 @@ public class MyCodeGenerator {
     //注释在后面基本不需要改，在上边的需要改
     //数据库库名
     private static String databaseName="mybatisplus";
-    //要生成的数据表名
-
+    //数据表名,需要设置setExclude（排除这张表,全部的话就""这样）和setInclude（生成这张表）
+    private static String tableName="";
     //账户
     private static String userName="root";
     //密码
     private static String passWord="mysql123";
-    //生成的包会当前项目/src/main/java/moduleName中
-    private static String moduleName="test";
     //父包名字，如"com.baomidou.ant"
     private static String parentName="com.zhaolearn.mybatisplus3";
+    //生成的包会当前项目/src/main/java/{parentName}/{moduleName}中
+    private static String moduleName=null;
+
 
 
 
@@ -44,6 +45,30 @@ public class MyCodeGenerator {
     public static void generator() {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
+
+        // 策略配置
+        StrategyConfig strategy = new StrategyConfig();
+//        strategy.setInclude(tableName);
+        strategy.setExclude(tableName);
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        strategy.setSuperServiceClass(null);
+        strategy.setSuperServiceImplClass(null);
+        strategy.setSuperMapperClass(null);
+         /*     strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+        strategy.setEntityLombokModel(true);
+        strategy.setRestControllerStyle(true);
+        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+        strategy.setSuperEntityColumns("id");
+        strategy.setControllerMappingHyphenStyle(true);
+        strategy.setTablePrefix(pc.getModuleName() + "_");*/
+        mpg.setStrategy(strategy);
+
+
+
+
+
+
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
@@ -76,62 +101,6 @@ public class MyCodeGenerator {
 
 
 
-
-
-        // 自定义配置
-        InjectionConfig cfg = new InjectionConfig() {
-            @Override
-            public void initMap() {
-                // to do nothing
-            }
-        };
-
-        // 如果模板引擎是 freemarker
-        String templatePath = "/templates/mapper.xml.ftl";
-        // 如果模板引擎是 velocity
-        // String templatePath = "/templates/mapper.xml.vm";
-
-        // 自定义输出配置
-        List<FileOutConfig> focList = new ArrayList<>();
-        // 自定义配置会被优先输出
-        focList.add(new FileOutConfig(templatePath) {
-            @Override
-            public String outputFile(TableInfo tableInfo) {
-                // 自定义输出文件名
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
-                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
-            }
-        });
-
-        cfg.setFileOutConfigList(focList);
-        mpg.setCfg(cfg);
-
-        // 配置模板
-        TemplateConfig templateConfig = new TemplateConfig();
-
-        // 配置自定义输出模板
-        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-        // templateConfig.setEntity("templates/entity2.java");
-        // templateConfig.setService();
-        // templateConfig.setController();
-
-        templateConfig.setXml(null);
-        mpg.setTemplate(templateConfig);
-
-       // 策略配置
-        StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.underline_to_camel);
-        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
-        strategy.setEntityLombokModel(true);
-        strategy.setRestControllerStyle(true);
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
-        strategy.setInclude("user");
-        strategy.setSuperEntityColumns("id");
-        strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
-        mpg.setStrategy(strategy);
-        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }
 
