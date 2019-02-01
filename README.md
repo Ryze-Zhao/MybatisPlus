@@ -2,6 +2,8 @@
 1.CRUD接口使用；
 2.条件构造器使用；
 3.分页插件使用；
+4.代码生成器；
+
 
 #### 项目介绍
 主要是学习Mybatis Plus
@@ -24,9 +26,11 @@
     分页使用
         1、展示了MybatisPlus的核心功能之一分页插件的两种使用方法；
 3.  mybatis-plus-3
-    代码生成器，3.0.3版本后，需要引入mybatis-plus-generator依赖
+    代码生成器，3.0.3版本后，需要引入mybatis-plus-generator依赖,详细的配置信息，可以到网站看
+    https://mp.baomidou.com/config/generator-config.html#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE
     
 #### 参与贡献
 1. RyzeZhao
 
 #### MyBatisPlus博客汇总
+http://www.hehaozhao.top/front/articlePage/vqjugykxyv
