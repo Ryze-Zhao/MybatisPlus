@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
