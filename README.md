@@ -24,7 +24,7 @@
     分页使用
         1、展示了MybatisPlus的核心功能之一分页插件的两种使用方法；
 3.  mybatis-plus-3
-    代码生成器，因未能找到AutoGenerator依赖，所以废弃    
+    代码生成器，3.0.3版本后，需要引入mybatis-plus-generator依赖
     
 #### 参与贡献
 1. RyzeZhao

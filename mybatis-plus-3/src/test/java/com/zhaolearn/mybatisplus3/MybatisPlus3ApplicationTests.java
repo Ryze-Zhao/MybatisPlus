@@ -11,6 +11,7 @@ public class MybatisPlus3ApplicationTests {
 
     @Test
     public void contextLoads() {
+        MyCodeGenerator.generator();
     }
 
 }

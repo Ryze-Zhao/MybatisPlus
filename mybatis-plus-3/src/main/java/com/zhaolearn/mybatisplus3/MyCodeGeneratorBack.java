@@ -13,70 +13,68 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
+/**
+ *
+ * 备份一份原本的代码
+ * @param null
+ * @return:
+ * @author: HeHaoZhao
+ * @date: 2019/2/1 15:20
+ */
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
-public class MyCodeGenerator {
-    //注释在后面基本不需要改，在上边的需要改
-    //数据库库名
-    private static String databaseName="mybatisplus";
-    //要生成的数据表名
-
-    //账户
-    private static String userName="root";
-    //密码
-    private static String passWord="mysql123";
-    //生成的包会当前项目/src/main/java/moduleName中
-    private static String moduleName="test";
-    //父包名字，如"com.baomidou.ant"
-    private static String parentName="com.zhaolearn.mybatisplus3";
+public class MyCodeGeneratorBack {
 
 
+/*
 
+    */
+/**
+     * <p>
+     * 读取控制台内容
+     * </p>
+     *//*
 
+    public static String scanner(String tip) {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder help = new StringBuilder();
+        help.append("请输入" + tip + "：");
+        System.out.println(help.toString());
+        if (scanner.hasNext()) {
+            String ipt = scanner.next();
+                return ipt;
+        }
+        return null;
+    }
 
-    private static String ip="localhost";//数据库IP
-    private static String port="3306";//数据库端口
-    private static String driverName="com.mysql.cj.jdbc.Driver";//com.mysql.cj.jdbc.Driver或者com.mysql.jdbc.Driver
-    private static String author="zhao";//开发人员
-
-
-    public static void generator() {
+    public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
-        // 数据源配置
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://"+ip+":"+port+"/"+databaseName+"?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false");
-        dsc.setDriverName(driverName);
-        dsc.setUsername(userName);
-        dsc.setPassword(passWord);
-        mpg.setDataSource(dsc);
-
-
-
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");//获得当前类全路径
+        String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor(author);
-        gc.setOpen(false);//是否打开输出目录
+        gc.setAuthor("jobob");
+        gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
-
+        // 数据源配置
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl("jdbc:mysql://localhost:3306/ant?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        // dsc.setSchemaName("public");
+        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setUsername("root");
+        dsc.setPassword("密码");
+        mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(moduleName);
-        pc.setParent(parentName);//父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
+        pc.setModuleName(scanner("模块名"));
+        pc.setParent("com.baomidou.ant");
         mpg.setPackageInfo(pc);
-
-
-
-
-
-
-
 
         // 自定义配置
         InjectionConfig cfg = new InjectionConfig() {
@@ -118,7 +116,7 @@ public class MyCodeGenerator {
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
 
-       // 策略配置
+        // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
@@ -126,7 +124,7 @@ public class MyCodeGenerator {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
-        strategy.setInclude("user");
+        strategy.setInclude(scanner("表名"));
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
@@ -135,5 +133,6 @@ public class MyCodeGenerator {
         mpg.execute();
     }
 
+*/
 
 }
