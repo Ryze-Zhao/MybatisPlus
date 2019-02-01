@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
 public class MyCodeGenerator {
-    //注释在后面基本不需要改，在上边的需要改
     //数据库库名
     private static String databaseName="mybatisplus";
     //数据表名,需要设置setExclude（排除这张表,全部的话就""这样）和setInclude（生成这张表）
@@ -27,15 +26,10 @@ public class MyCodeGenerator {
     private static String moduleName=null;
 
 
-
-
-
-
     private static String ip="localhost";//数据库IP
     private static String port="3306";//数据库端口
     private static String driverName="com.mysql.cj.jdbc.Driver";//com.mysql.cj.jdbc.Driver或者com.mysql.jdbc.Driver
     private static String author="zhao";//开发人员
-
 
     public static void generator() {
         // 代码生成器
@@ -59,12 +53,6 @@ public class MyCodeGenerator {
         strategy.setTablePrefix(pc.getModuleName() + "_");*/
         mpg.setStrategy(strategy);
 
-
-
-
-
-
-
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://"+ip+":"+port+"/"+databaseName+"?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false");
@@ -72,8 +60,6 @@ public class MyCodeGenerator {
         dsc.setUsername(userName);
         dsc.setPassword(passWord);
         mpg.setDataSource(dsc);
-
-
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
@@ -83,21 +69,11 @@ public class MyCodeGenerator {
         gc.setOpen(false);//是否打开输出目录
         mpg.setGlobalConfig(gc);
 
-
-
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(moduleName);
         pc.setParent(parentName);//父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
         mpg.setPackageInfo(pc);
-
-
-
-
-
-
         mpg.execute();
     }
-
-
 }
