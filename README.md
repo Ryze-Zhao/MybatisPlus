@@ -1,5 +1,7 @@
 # Mybatis Plus结合SpringBoot学习
-
+1.CRUD接口使用；
+2.条件构造器使用；
+3.分页插件使用；
 
 #### 项目介绍
 主要是学习Mybatis Plus
