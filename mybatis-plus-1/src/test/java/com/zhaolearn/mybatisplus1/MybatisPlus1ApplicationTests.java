@@ -35,7 +35,5 @@ public class MybatisPlus1ApplicationTests {
         //自行构造，key为数据表字段，value是想查的值
         userMapper.selectList(new QueryWrapper<User>().like("test_column","test")).stream().forEach(e -> System.out.println(e.toString()));
     }
-
-
 }
 
