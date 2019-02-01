@@ -14,9 +14,5 @@ public class MybatisPlus2Application {
         SpringApplication.run(MybatisPlus2Application.class, args);
     }
 
-    @Bean
-    public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
-    }
 }
 
