@@ -53,6 +53,5 @@ public class MybatisPlus2ApplicationTests {
         page.setRecords(userMapper.mySelectPage(m, page));
         System.out.println(JSONObject.toJSONString(page));
         page.getRecords().stream().forEach(e -> System.out.println(e.toString()));
-
     }
 }
