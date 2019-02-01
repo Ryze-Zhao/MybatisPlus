@@ -10,5 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>mybatis-plus-1</module>
+        <module>mybatis-plus-2</module>
     </modules>
 </project>
