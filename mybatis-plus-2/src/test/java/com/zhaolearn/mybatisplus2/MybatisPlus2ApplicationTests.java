@@ -29,12 +29,12 @@ public class MybatisPlus2ApplicationTests {
      */
     @Test
     public void selectList1() {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByAsc("id");
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();//新建QueryWrapper
+        queryWrapper.orderByAsc("id");//以id排序，升序
         Page<User> page = new Page<>(1, 2);  // 查询第1页，每页返回2条
-        IPage<User> iPage = userMapper.selectPage(page, queryWrapper);
-        System.out.println(JSONObject.toJSONString(iPage));
-        iPage.getRecords().stream().forEach(e -> System.out.println(e.toString()));
+        IPage<User> iPage = userMapper.selectPage(page, queryWrapper);//查询
+        System.out.println(JSONObject.toJSONString(iPage));//输出信息
+        iPage.getRecords().stream().forEach(e -> System.out.println(e.toString()));//输出每个对象
     }
 
     /**

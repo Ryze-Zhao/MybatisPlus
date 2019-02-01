@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserMapper extends BaseMapper<User> {
-
     @Select("SELECT * FROM user WHERE age < #{mapABC.age} ORDER BY `id` ASC")
     List<User> mySelectPage(@Param("mapABC") Map<String,Object> mapABC, Page<User> page);
 }
