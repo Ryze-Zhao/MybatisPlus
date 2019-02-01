@@ -29,12 +29,9 @@ public class MybatisPlus2ApplicationTests {
      */
     @Test
     public void selectList1() {
-        Map<String, Object> map = new HashMap<>();
-
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByAsc("id");
-
-        Page<User> page = new Page<>(1, 2);  // 查询第1页，每页返回5条
+        Page<User> page = new Page<>(1, 2);  // 查询第1页，每页返回2条
         IPage<User> iPage = userMapper.selectPage(page, queryWrapper);
         System.out.println(JSONObject.toJSONString(iPage));
         iPage.getRecords().stream().forEach(e -> System.out.println(e.toString()));
