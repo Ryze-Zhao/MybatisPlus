@@ -33,4 +33,4 @@
 1. RyzeZhao
 
 #### MyBatisPlus博客汇总
-http://www.hehaozhao.top/front/articlePage/vqjugykxyv
+https://www.hehaozhao.top/front/articlePage/vqjugykxyv
