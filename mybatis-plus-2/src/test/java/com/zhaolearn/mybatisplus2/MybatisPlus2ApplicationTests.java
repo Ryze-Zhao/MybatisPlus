@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
@@ -54,4 +56,15 @@ public class MybatisPlus2ApplicationTests {
         System.out.println(JSONObject.toJSONString(page));
         page.getRecords().stream().forEach(e -> System.out.println(e.toString()));
     }
+    @Test
+    public void selectList3() {
+        Map<String, Object> m = new HashMap<>();
+        m.put("name", "%test3%");
+        Page<User> page = new Page<>(1, 5);
+        page.setRecords(userMapper.mySelectLikePage(m, page));
+        System.out.println(JSONObject.toJSONString(page));
+        page.getRecords().stream().forEach(e -> System.out.println(e.toString()));
+    }
+
+
 }
