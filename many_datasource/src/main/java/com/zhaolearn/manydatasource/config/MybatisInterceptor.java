@@ -1,4 +1,4 @@
-package com.zhaolearn.many_datasource.config;
+package com.zhaolearn.manydatasource.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.binding.MapperMethod.ParamMap;

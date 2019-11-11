@@ -1,4 +1,4 @@
-package com.zhaolearn.many_datasource;
+package com.zhaolearn.manydatasource;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

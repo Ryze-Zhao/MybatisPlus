@@ -3,7 +3,7 @@
 // (powered by Fernflower decompiler)
 //
 
-package com.zhaolearn.many_datasource.config;
+package com.zhaolearn.manydatasource.config;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.zhaolearn.many_datasource.common;
+package com.zhaolearn.manydatasource.common;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
