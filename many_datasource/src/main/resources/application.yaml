@@ -4,6 +4,7 @@ server:
 spring:
   datasource:
     dynamic:
+      #设置主库的名称为
       primary: master # 默认
       druid: # 全局druid参数，绝大部分值和默认保持一致。(现已支持的参数如下,不清楚含义不要乱设置)
         # 连接池的配置信息
@@ -29,21 +30,23 @@ spring:
         # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
         connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
       datasource:
-       master:
-        url: jdbc:mysql://127.0.0.1:3306/master?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-        username: root
-        password: mysql123
-        driver-class-name: com.mysql.cj.jdbc.Driver
-       slave:
-        url: jdbc:mysql://127.0.0.1:3306/slave?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-        username: root
-        password: mysql123
-        driver-class-name: com.mysql.cj.jdbc.Driver
+        #        主库，最好为master，用于上边配置主库名称
+        master:
+          url: jdbc:mysql://127.0.0.1:3306/master?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: mysql123
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          #从库，名字随意
+        slave:
+          url: jdbc:mysql://127.0.0.1:3306/slave?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: mysql123
+          driver-class-name: com.mysql.cj.jdbc.Driver
 ##mybatis plus 设置
 mybatis-plus:
   mapper-locations: classpath*:com/zhaolearn/many_datasource/business/*Mapper.xml
-#  configuration:
-    #     这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    #  configuration:
+  #     这个配置会将执行的sql打印出来，在开发或测试的时候可以用
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
