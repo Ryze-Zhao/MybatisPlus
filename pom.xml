@@ -13,6 +13,6 @@
         <module>mybatis-plus-2</module>
         <module>mybatis-plus-3</module>
         <module>many_datasource</module>
-        <module>druid_many_datasource</module>
+<!--        <module>druid_many_datasource</module>-->
     </modules>
 </project>
