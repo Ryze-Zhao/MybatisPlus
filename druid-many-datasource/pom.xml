@@ -21,11 +21,22 @@
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <jackson-annotations.version>2.10.0</jackson-annotations.version>
         <dynamic-datasource.version>2.5.2</dynamic-datasource.version>
+        <druid.version>1.1.21</druid.version>
     </properties>
 
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <!--      令SpringBoot保持开启，才可以查看Druid页面  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!--        SpringBoot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
