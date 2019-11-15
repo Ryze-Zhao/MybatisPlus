@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zhaolearn</groupId>
-    <artifactId>many_datasource</artifactId>
+    <artifactId>many-datasource</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>many_datasource</name>
+    <name>many-datasource</name>
     <description>MyBatisPlus多数据源</description>
 
     <properties>
